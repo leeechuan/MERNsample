@@ -6,7 +6,7 @@ const UserModel = require('./models/Users')
 const app = express()
 app.use(cors(
     {
-        origin: ["httmps://mern-sample-pi.vercel.app"],
+        origin: ["https://mern-sample-pi.vercel.app"],
         methods: ["POST", "GET"],
         credentials: true
     }
