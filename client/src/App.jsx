@@ -8,14 +8,14 @@ function App() {
   const [age, setAge] = useState()
 
   useEffect(() => {
-    axios.get('http://localhost:3001/getUsers')
+    axios.get('http://mern-sample-eight.vercel.app/getUsers')
     .then((users) => {
       setUsers(users.data)
     }).catch(err => console.log(err))
   } , [])
 
   const Submit = () => {
-    axios.post('http://localhost:3001/createUser', {name, age})
+    axios.post('http://mern-sample-eight.vercel.app/createUser', {name, age})
     .then((users) => {
       console.log(users)
     }).catch(err => console.log(err))
