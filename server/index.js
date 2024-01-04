@@ -4,7 +4,13 @@ const cors = require('cors')
 const UserModel = require('./models/Users')
 
 const app = express()
-app.use(cors())
+app.use(cors(
+    {
+        origin: ["httmps://mern-sample-eight.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 app.use(express.json())
 
 mongoose.connect("mongodb+srv://admin:test1234@cluster0.hvxbaty.mongodb.net/mern?retryWrites=true&w=majority")
