@@ -6,7 +6,7 @@ const UserModel = require('./models/Users')
 const app = express()
 app.use(cors(
     {
-        origin: ["httmps://mern-sample-eight.vercel.app"],
+        origin: ["httmps://mern-sample-pi.vercel.app"],
         methods: ["POST", "GET"],
         credentials: true
     }
@@ -14,6 +14,10 @@ app.use(cors(
 app.use(express.json())
 
 mongoose.connect("mongodb+srv://admin:test1234@cluster0.hvxbaty.mongodb.net/mern?retryWrites=true&w=majority")
+
+app.get("/", (req,res) => {
+    res.json("Hello");
+})
 
 app.get("/getUsers", (req, res) => {
     UserModel.find({}).then(function(users) {
